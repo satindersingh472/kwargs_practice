@@ -1,28 +1,27 @@
-tables ={
-    1: {
-    'name': 'satinder',
-    'vip_status': True,
-    'order_items': {
-        'food': "pizza , pasta",
-        'drinks': 'apple juice'
+tables =[
+    {
+        'name': 'satinder',
+        'vip_status': True,
+        'order_items': [
+            {
+                'food': 'noodles'
+            },
+            {
+                'drinks':'apple juice'
+            }
+        ]
     }
-},
-2: {
+]
 
-}
-}
+def assign_table_food(**table):
+    for eachTable in tables:
+        eachTable['name'] = table.get('name')
+        eachTable['vip_status'] = table.get('vip_status')
+        eachTable['order_items'][0]['food'] = table.get('food')
+        eachTable['order_items'][1]['drinks'] = table.get('drinks')
 
-def assign_table_food(table_number,**table):
-    name = table.get('name')
-    vip_status = table.get('vip_status')
-    food = table.get('food')
-    drinks = table.get('drinks')
-
-    tables[table_number]['name'] = name
-    tables[table_number]['vip_status'] = vip_status
-    tables[table_number]['food'] = food
-    # tables[table_number]['order_items']['drinks'] = drinks
+    tables.append(eachTable)
     return tables
 
 
-print(assign_table_food(2,name='sam',vip_status=True,food="samosa",drinks='beer'))
+print(assign_table_food(name='sam',vip_status=True,food="samosa",drinks='beer'))
