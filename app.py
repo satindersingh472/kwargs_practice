@@ -13,6 +13,8 @@ tables =[
     }
 ]
 
+# this function will grab the values and 
+
 def assign_table_food(**table):
     for eachTable in tables:
         eachTable['name'] = table.get('name')
