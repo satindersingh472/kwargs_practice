@@ -19,7 +19,10 @@ def assign_table_food(**table):
     eachTable = {}
     eachTable['name'] = table.get('name')
     eachTable['vip_status'] = table.get('vip_status')
-    # eachTable['order_items'][0]['food'] = table.get('food')
+    columns = ['food','drinks']
+    eachTable['order_items'] = []
+    row = [table.get('food'), table.get('drinks')]
+    eachTable['order_items'].append(dict(zip(columns,row)))
     # eachTable['order_items'][1]['drinks'] = table.get('drinks')
 
     tables.append(eachTable)
