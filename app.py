@@ -16,7 +16,10 @@ tables =[
 # this function will grab the values and 
 
 def assign_table_food(**table):
+    # create an empty object
     eachTable = {}
+
+    # get name and vip status from kwargs
     eachTable['name'] = table.get('name')
     eachTable['vip_status'] = table.get('vip_status')
     columns = ['food','drinks']
